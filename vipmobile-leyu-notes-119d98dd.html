@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 | 再访·收藏·持续关注</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fbf7f0;
+            font-family: 'Georgia', 'Palatino Linotype', 'Times New Roman', serif;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fffcf8;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            padding: 2.4rem 2rem 3rem;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 1.4rem;
+            border-bottom: 2px solid #ede6db;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            color: #3d352e;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #6b5f54;
+            margin-top: 0.6rem;
+            padding: 0 0.6rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #e7ddd1;
+            padding: 0.3rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #3d352e;
+            margin-top: 1rem;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background: #f5efe7;
+            border-left: 6px solid #b7a38e;
+            padding: 1.2rem 1.8rem;
+            margin: 2rem 0 2.2rem;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .notice-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .notice-box em {
+            font-style: italic;
+            color: #5b4d3f;
+        }
+
+        /* 优势区 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .feat-item {
+            flex: 1 1 200px;
+            background: #fcf9f5;
+            border: 1px solid #e6dbcf;
+            border-radius: 20px;
+            padding: 1.4rem 1.2rem;
+        }
+
+        .feat-item h3 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: #4a3f35;
+            border-bottom: 1px dashed #d5c9bb;
+            padding-bottom: 0.3rem;
+        }
+
+        .feat-item p {
+            font-size: 0.95rem;
+            color: #3f3832;
+        }
+
+        /* 说明区 / 场景 */
+        .story-block {
+            margin: 2.4rem 0 2rem;
+            background: #f6f1ea;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+        }
+
+        .story-block h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #3d352e;
+            margin-bottom: 0.8rem;
+        }
+
+        .story-block p {
+            margin-bottom: 0.8rem;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-block .highlight {
+            background: #e5dace;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #2e2720;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #3d352e;
+            margin-bottom: 1rem;
+            border-left: 5px solid #b7a38e;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            background: #fcf9f5;
+            border-radius: 16px;
+            padding: 0.9rem 1.4rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e7ddd1;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #4a3f35;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #4f443a;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #ede6db;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6b5f54;
+        }
+
+        .footer-links a {
+            color: #5f4d3a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c7b9a9;
+        }
+
+        .footer-links a:hover {
+            color: #2e2720;
+            text-decoration-color: #8f7b65;
+        }
+
+        .footer-links .sep {
+            margin: 0 0.6rem;
+            color: #c7b9a9;
+        }
+
+        .inline-link {
+            color: #5f4d3a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c7b9a9;
+        }
+
+        .inline-link:hover {
+            color: #2e2720;
+            text-decoration-color: #7a6855;
+        }
+
+        @media (max-width: 500px) {
+            .page {
+                padding: 1.6rem 1rem 2.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .feature-grid {
+                gap: 1rem;
+            }
+            .story-block {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>乐鱼</h1>
+        <p>记下，再回来。收藏过的页面，不该消失在标签页里。</p>
+        <span class="tagline">· 持续关注 · 常看常新 ·</span>
+    </div>
+
+    <!-- 提示框 / 引用块：再次访问与收藏 -->
+    <div class="notice-box">
+        <p><em>“上次看到一半的文章，后来找不到了……”</em> 很多人都有类似的经历。</p>
+        <p>把这里放进收藏夹，或者记下网址，下次回来不用重新搜索。我们不会频繁变动地址，也不会突然消失。</p>
+        <p style="margin-top:0.6rem;">—— 收藏 <a href="https://vipmobile-leyu.com" class="inline-link">乐鱼</a>，就像在书里夹一枚书签。</p>
+    </div>
+
+    <!-- 优势区：为什么值得收藏 -->
+    <div class="feature-grid">
+        <div class="feat-item">
+            <h3>内容稳定</h3>
+            <p>不追爆款、不蹭热点，每一篇都经过整理与校对。你收藏的页面，几个月后打开依然有参考价值。</p>
+        </div>
+        <div class="feat-item">
+            <h3>无弹窗干扰</h3>
+            <p>干净的阅读环境，没有漂浮广告、自动播放的音频或强制跳转。专注内容本身。</p>
+        </div>
+        <div class="feat-item">
+            <h3>持续更新</h3>
+            <p>不定期补充新文章、场景指南和常见问题。收藏后偶尔回看，总有一些新收获。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 / 场景：从再次访问的角度 -->
+    <div class="story-block">
+        <h2>再访的意义</h2>
+        <p>很多时候我们第一次打开一个页面，只是匆匆扫一眼。等真正需要的时候，却忘了关键词、搜不到路径。</p>
+        <p><span class="highlight">收藏</span> 是一种温和的提醒：这个页面值得再看一次。也许是某个操作步骤，也许是表格里的参考数据，又或者只是那天读到的一段让人静下来的文字。</p>
+        <p>所以我们会尽量让 <a href="https://vipmobile-leyu.com" class="inline-link">乐鱼</a> 保持简洁、直接。不需要注册才能看，不需要下载才能读。打开，就是上次停留的地方。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见问题 · 摘要</h2>
+
+        <div class="faq-item">
+            <strong>页面会经常改版吗？</strong>
+            <p>不会。我们倾向于稳定布局，偶尔优化排版，但不会让老读者感到陌生。收藏夹里的链接长期有效。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>如何快速找到之前看过的内容？</strong>
+            <p>建议将页面添加到浏览器书签，或者用笔记软件记下链接。我们没有隐藏目录，所有内容都在首页可寻。</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>移动端浏览体验如何？</strong>
+            <p>适配手机屏幕，字体和间距会根据设备自动调整。横屏竖屏都能正常阅读。</p>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span>再访 · 收藏 · 持续关注</span>
+        <span class="sep">|</span>
+        <a href="https://vipmobile-leyu.com">乐鱼</a>
+        <span class="sep">|</span>
+        <span>内容仅供个人参考</span>
+    </div>
+
+</div>
+</body>
+</html>
