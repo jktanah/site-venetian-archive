@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 简洁介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde7d0 0%, #f6d5b3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .page-card {
+            max-width: 820px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(150, 90, 30, 0.10), 0 8px 20px rgba(0, 0, 0, 0.04);
+            padding: 2.5rem 2.8rem;
+            transition: box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 235, 215, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            .page-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 24px;
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #edc9a0;
+            color: #5a3e2b;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            margin-bottom: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 640;
+            line-height: 1.2;
+            color: #2e1f13;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #6f4e34;
+            border-left: 4px solid #dba974;
+            padding-left: 1rem;
+            margin: 1rem 0 1.8rem 0;
+            line-height: 1.5;
+        }
+
+        .intro-text {
+            color: #2f2017;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.4rem;
+        }
+
+        .highlight-sentence {
+            background: #faf0e6;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            margin: 1.8rem 0 1.2rem 0;
+            color: #2f1e12;
+            font-weight: 440;
+            border-left: 6px solid #dba06a;
+        }
+
+        .highlight-sentence a {
+            color: #b2652a;
+            font-weight: 600;
+            text-decoration: none;
+            background: #f3e2d1;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            transition: background 0.15s, box-shadow 0.15s;
+            white-space: nowrap;
+        }
+
+        .highlight-sentence a:hover {
+            background: #e5c9b0;
+            box-shadow: 0 2px 6px rgba(150, 80, 30, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 580;
+            color: #3f291c;
+            margin: 2rem 0 0.6rem 0;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid #edd7c2;
+        }
+
+        .para {
+            color: #2e1f14;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0.2rem;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+            color: #2d1f14;
+        }
+
+        .bullet-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #c28652;
+            font-weight: 700;
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+
+        .quote-block {
+            background: #f6ebe0;
+            border-radius: 24px;
+            padding: 1.3rem 1.6rem;
+            margin: 1.8rem 0 1rem 0;
+            font-style: normal;
+            color: #392a1e;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .quote-block .quote-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #9f7a5a;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-mini {
+            margin: 1.6rem 0 0.8rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #ebd9c7;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #3b281c;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-a {
+            color: #4e3727;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .note-access {
+            background: #f3e3d4;
+            border-radius: 30px;
+            padding: 0.8rem 1.3rem;
+            margin: 2rem 0 0.4rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #2e1f13;
+            border: 1px solid #e6cfb9;
+            box-shadow: 0 2px 6px rgba(150, 90, 40, 0.04);
+        }
+
+        .note-access a {
+            color: #8f551f;
+            font-weight: 600;
+            text-decoration: none;
+            background: #efe0cf;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            transition: background 0.15s;
+        }
+
+        .note-access a:hover {
+            background: #dfcbb5;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #edd7c2, transparent);
+            margin: 1.8rem 0;
+        }
+
+        .footer-note {
+            color: #6f533d;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 1.2rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <span class="hero-tag">📌 快速识别</span>
+        <h1>乐鱼 · 用户导向简介</h1>
+        <div class="subhead">
+            如果你正在寻找一个可以直接抵达的站点，以下内容帮你快速判断它是否符合你的需求。
+        </div>
+
+        <p class="intro-text">
+            不论是通过搜索、推荐还是偶然看到，当你面对一个新出现的网站时，最关心的大概是两件事：<strong>它是什么</strong>，以及<strong>我能不能直接使用</strong>。以下是对 <a href="https://vipofficial-leyu.com" style="color:#a05f2b; text-decoration:underline; font-weight:500;">乐鱼</a> 站点用途的简要整理，用平实的段落呈现，没有多余的跳转引导。
+        </p>
+
+        <!-- 正文段落一 -->
+        <div class="section-title">▎网站定位与基本用途</div>
+        <p class="para">
+            <strong>乐鱼</strong> 是一个以信息聚合及轻量服务为主的网络平台，主要面向希望快速检索、浏览特定内容的用户。根据其结构，该站点更接近分类导航与资源整合的定位，并不涉及金融交易、投资或高风险交互。用户可借助它查找经过分类的链接或内容索引，节省逐页搜索的时间。
+        </p>
+        <p class="para">
+            如果你习惯在访问前先了解一个站的调性，那么可以将其想象成一个整理过的“内容目录”——它不生产原始信息，而是把分散的条目以清晰的方式归拢。初次到访时，你可以直接浏览首页的模块分区，判断是否与你的兴趣重合。
+        </p>
+
+        <!-- 特点简表 (用列表而非表格, 保持阅读感) -->
+        <div class="section-title">▎几个便于识别的特征</div>
+        <ul class="bullet-list">
+            <li><strong>结构直白</strong>：页面分区采用卡片式布局，标题与摘要一目了然，没有复杂弹窗或强制注册环节。</li>
+            <li><strong>分类索引</strong>：内容按主题或类型分组，方便按需查看，减少漫无目的的点击。</li>
+            <li><strong>轻量加载</strong>：页面元素经过精简，在移动设备和桌面端都能较快打开，没有冗余脚本。</li>
+            <li><strong>无强制跳转</strong>：所有链接均以新标签或原位方式呈现，你可以自主决定是否进一步浏览。</li>
+        </ul>
+
+        <!-- 引用/提示块 -->
+        <div class="quote-block">
+            <span class="quote-label">📖 使用提示</span>
+            初次使用时，建议先浏览首页各区块的标题和摘要，确认其内容分类是否符合你的查找习惯。如果某个模块不感兴趣，直接跳过即可——<strong>乐鱼</strong>没有隐藏门槛或诱导点击的设计。
+        </div>
+
+        <!-- 场景段落 -->
+        <div class="section-title">▎适合哪些场景？</div>
+        <p class="para">
+            如果你属于以下任意一种情况，<strong>乐鱼</strong>可能会为你节省一点时间：正在寻找某个主题的汇总入口；希望快速了解某类信息的常见来源；或者只是需要一个干净的起始页面，作为日常浏览的中转站。不适用于需要深度原创内容、实时交易或社交互动的用户。
+        </p>
+
+        <!-- FAQ摘要 (两个问题, 不展开太多) -->
+        <div class="faq-mini">
+            <div class="faq-item">
+                <span class="faq-q">Q：是否需要注册或下载才能使用？</span>
+                <div class="faq-a">A：不需要。直接通过浏览器打开即可浏览全部公开内容，无注册、无 App 强制绑定。</div>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">Q：网站内容是否持续更新？</span>
+                <div class="faq-a">A：首页模块会跟随站点维护周期进行调整，但具体更新频率以实际页面为准。建议不定期回看。</div>
+            </div>
+        </div>
+
+        <!-- 嵌入链接的访问句 (自然含 a 标签, 文本严格=乐鱼) -->
+        <div class="highlight-sentence">
+            💡 若你想直接查看站点全貌，可前往 <a href="https://vipofficial-leyu.com">乐鱼</a> 首页，根据分区标题自行探索。本页仅作介绍，不代替实际浏览体验。
+        </div>
+
+        <hr>
+        <div class="note-access">
+            ⚡ 如已了解以上信息，可通过下方链接直接抵达：<a href="https://vipofficial-leyu.com">乐鱼</a> · 首页
+        </div>
+
+        <div class="footer-note">
+            本页为独立介绍，仅用于说明用途，不构成任何形式的使用承诺。
+        </div>
+    </div>
+</body>
+</html>
